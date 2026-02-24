@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vision | Techmate Engineering</title>
+
+<link rel="icon" type="image/png" href="assets/logo.png">
+
+<style>
+:root{
+    --primary:#0f172a;
+    --accent:#2563eb;
+    --light:#f8fafc;
+    --gray:#64748b;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:var(--light);
+    color:#1e293b;
+
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
+/* ===== NAVBAR ===== */
+header{
+    background:var(--primary);
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:white;
+    font-weight:600;
+    font-size:16px;
+}
+
+.logo img{
+    height:38px;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+    align-items:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown{
+    position:relative;
+}
+
+.dropdown-content{
+    position:absolute;
+    top:30px;
+    left:0;
+    background:white;
+    min-width:200px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    border-radius:6px;
+    display:none;
+    flex-direction:column;
+    padding:10px 0;
+    z-index:999;
+}
+
+.dropdown-content a{
+    color:#1e293b;
+    padding:10px 15px;
+    font-size:14px;
+    text-decoration:none;
+}
+
+.dropdown-content a:hover{
+    background:#f1f5f9;
+}
+
+/* Hover support */
+.dropdown:hover .dropdown-content{
+    display:flex;
+}
+
+/* Click support */
+.dropdown.active .dropdown-content{
+    display:flex;
+}
+
+/* ===== MAIN ===== */
+main{
+    flex:1;
+}
+
+.products-section{
+    max-width:1200px;
+    margin:60px auto;
+    padding:20px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:50px;
+    color:var(--primary);
+}
+
+.vision-card{
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+    line-height:1.8;
+    font-size:16px;
+    color:var(--gray);
+    max-width:900px;
+    margin:0 auto;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    .section-title{
+        font-size:26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">
+            <img src="Logo.png" alt="Techmate Logo">
+            <span>Techmate Engineering</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+                                    <a href="vision.html" class="nav-link">Vision</a>
+
+            <a href="index.html#about">About Us</a>
+
+            <div class="dropdown" id="servicesDropdown">
+                <a href="#" id="servicesBtn">Services ▾</a>
+                <div class="dropdown-content">
+                    <a href="services-civil.html">Civil Solutions</a>
+                    <a href="services-industrial.html">Industrial Solutions</a>
+                </div>
+            </div>
+
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+<section class="products-section">
+    <h2 class="section-title">Our Vision</h2>
+
+    <div class="vision-card">
+        Our vision is to become a trusted and leading name in engineering and infrastructure solutions, recognized for our commitment to quality, innovation, and sustainability. We aim to build resilient and future-ready structures that support industrial advancement and community development. Through strong partnerships, professional excellence, and continuous improvement, we strive to deliver long-term value and set new standards in reliability and performance.
+    </div>
+</section>
+</main>
+
+<footer>
+    © 2026 Techmate Engineering & Infra Solutions. All Rights Reserved.
+</footer>
+
+<script>
+const dropdown = document.getElementById("servicesDropdown");
+const btn = document.getElementById("servicesBtn");
+
+btn.addEventListener("click", function(e){
+    e.preventDefault();
+    dropdown.classList.toggle("active");
+});
+
+document.addEventListener("click", function(e){
+    if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove("active");
+    }
+});
+</script>
+
+</body>
+</html>

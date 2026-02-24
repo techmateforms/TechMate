@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products | Techmate Engineering</title>
+
+<link rel="icon" type="image/png" href="assets/logo.png">
+
+<style>
+:root{
+    --primary:#0f172a;
+    --accent:#2563eb;
+    --light:#f8fafc;
+    --gray:#64748b;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:var(--light);
+    color:#1e293b;
+
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
+/* ===== NAVBAR ===== */
+header{
+    background:var(--primary);
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:white;
+    font-weight:600;
+    font-size:16px;
+}
+
+.logo img{
+    height:38px;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+    align-items:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown{
+    position:relative;
+}
+
+.dropdown-content{
+    position:absolute;
+    top:30px;
+    left:0;
+    background:white;
+    min-width:200px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    border-radius:6px;
+    display:none;
+    flex-direction:column;
+    padding:10px 0;
+    z-index:999;
+}
+
+.dropdown-content a{
+    color:#1e293b;
+    padding:10px 15px;
+    font-size:14px;
+    text-decoration:none;
+}
+
+.dropdown-content a:hover{
+    background:#f1f5f9;
+}
+
+.dropdown:hover .dropdown-content{
+    display:flex;
+}
+
+.dropdown.active .dropdown-content{
+    display:flex;
+}
+
+/* ===== MAIN CONTENT ===== */
+main{
+    flex:1;
+}
+
+/* ===== PRODUCTS SECTION ===== */
+.products-section{
+    max-width:1200px;
+    margin:60px auto;
+    padding:20px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:50px;
+    color:var(--primary);
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:40px;
+}
+
+.product-card{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+    transition:0.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+}
+
+.product-card img{
+    height:140px;
+    object-fit:contain;
+    margin-bottom:20px;
+}
+
+.product-card h3{
+    color:var(--accent);
+    margin-bottom:10px;
+}
+
+.product-card p{
+    font-size:14px;
+    color:var(--gray);
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">
+            <img src="Logo.png" alt="Techmate Logo">
+            <span>Techmate Engineering</span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+                                    <a href="vision.html" class="nav-link">Vision</a>
+
+            <a href="index.html#about">About Us</a>
+
+            <div class="dropdown" id="servicesDropdown">
+                <a href="#" id="servicesBtn">Services ▾</a>
+                <div class="dropdown-content">
+                    <a href="services-civil.html">Civil Solutions</a>
+                    <a href="services-industrial.html">Industrial Solutions</a>
+                </div>
+            </div>
+
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+<section class="products-section">
+    <h2 class="section-title">Our Products</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="aac.png" alt="AAC Blocks">
+            <h3>AAC Blocks</h3>
+            <p>Lightweight, high-strength autoclaved aerated concrete blocks for efficient construction.</p>
+        </div>
+
+        <div class="product-card">
+            <img src="flyash.png" alt="Flyash Bricks">
+            <h3>Flyash Bricks</h3>
+            <p>Eco-friendly and durable bricks ideal for sustainable construction projects.</p>
+        </div>
+
+        <div class="product-card">
+            <img src="pavers.png" alt="Pavers">
+            <h3>Pavers</h3>
+            <p>High-quality interlocking pavers for roads, pathways, and landscaping solutions.</p>
+        </div>
+
+        <div class="product-card">
+            <img src="adhesive.png" alt="Block Adhesive">
+            <h3>Block Adhesive</h3>
+            <p>Strong bonding adhesive specially formulated for AAC block installation.</p>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/products/tile-adhesive.png" alt="Tile Adhesive">
+            <h3>Tile Adhesive</h3>
+            <p>Premium tile adhesive ensuring strong grip and long-lasting finish.</p>
+        </div>
+
+        <div class="product-card">
+            <img src="plaster.png" alt="Readymix Plaster">
+            <h3>Readymix Plaster</h3>
+            <p>Pre-mixed plaster solution offering smooth finishing and time efficiency.</p>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/products/waterproofing.png" alt="Waterproofing Solutions">
+            <h3>Waterproofing Solutions</h3>
+            <p>Advanced waterproofing systems protecting structures from moisture damage.</p>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/products/waterproofing.png" alt="Shuttering Oil">
+            <h3>Shuttering Oil</h3>
+            <p>High-performance mould release oil that prevents concrete from sticking to formwork, ensuring smooth surface finish and easy removal.</p>
+        </div>
+
+    </div>
+</section>
+</main>
+
+<footer>
+    © 2026 Techmate Engineering & Infra Solutions. All Rights Reserved.
+</footer>
+
+<script>
+const dropdown = document.getElementById("servicesDropdown");
+const btn = document.getElementById("servicesBtn");
+
+btn.addEventListener("click", function(e){
+    e.preventDefault();
+    dropdown.classList.toggle("active");
+});
+
+document.addEventListener("click", function(e){
+    if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove("active");
+    }
+});
+</script>
+
+</body>
+</html>
